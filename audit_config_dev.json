@@ -1,4 +1,6 @@
 [
+  {"product": "OPSS"},
+  {"product": "SOA"},
   {"product": "customer", "businessObjectType": "oracle.apps.cdm.foundation.parties.customerAccountService.view.CustomerAccountContactRoleVO"},
   {"product": "customer", "businessObjectType": "oracle.apps.cdm.foundation.parties.customerAccountService.view.CustomerAccountContactVO"},
   {"product": "customer", "businessObjectType": "oracle.apps.cdm.foundation.parties.customerAccountService.view.CustomerAccountRelationshipVO"},
