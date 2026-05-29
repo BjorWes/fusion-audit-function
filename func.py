@@ -188,7 +188,7 @@ def collect_fusion_logs(
     if since:
         from_date = since[:10]  # normalize to YYYY-MM-DD
     else:
-        from_date = (datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(days=1)).strftime("%Y-%m-%d")
+        from_date = (datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(days=14)).strftime("%Y-%m-%d")
     to_date = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d")
 
     url = f"{pod_url}{audit_endpoint}"
@@ -205,6 +205,11 @@ def collect_fusion_logs(
                 "toDate": to_date,
                 "pageSize": str(page_limit),
                 "pageNumber": str(page_number),
+                "includeChildObjects": "true",
+                "includeAttributes": "true",
+                "attributeDetailMode": "true",
+                "includeExtendedObjectIdentiferColumns": "true",
+                "includeImpersonator": "true",
             }
             if bo_type:
                 payload["businessObjectType"] = bo_type
